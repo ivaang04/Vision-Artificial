@@ -1,0 +1,65 @@
+# ──────────────────────────────────────────
+# CREDENCIALES Y DOCUMENTOS PRIVADOS
+# ──────────────────────────────────────────
+*.env
+.env*
+token.env
+*.pdf
+
+# ──────────────────────────────────────────
+# PYTHON — artefactos generados
+# ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ──────────────────────────────────────────
+# MODELOS DE IA — archivos pesados
+# Pre-entrenados: se descargan en runtime (ultralytics, mediapipe).
+# Modelo custom (mando-ultima-prueba.pt): publicar en GitHub Releases.
+# ──────────────────────────────────────────
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.h5
+*.pb
+*.pkl
+*.cache
+actividad/yolov8n/
+
+# ──────────────────────────────────────────
+# VÍDEOS — demasiado grandes para git
+# Enlazar desde YouTube / Google Drive en el README.
+# ──────────────────────────────────────────
+*.mp4
+*.webm
+*.avi
+*.mov
+
+# ──────────────────────────────────────────
+# ENTORNOS VIRTUALES
+# ──────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ──────────────────────────────────────────
+# IDEs y sistemas operativos
+# ──────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

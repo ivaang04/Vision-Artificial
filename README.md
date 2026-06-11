@@ -113,7 +113,7 @@ Entrenamiento de un detector de objetos custom (mando a distancia) con YOLOv8/11
 - Script de inferencia mínimo en [`DL/yolo_run.py`](DL/yolo_run.py).
 
 **Pesos del modelo entrenado:**
-Los ficheros `.pt` no se incluyen en el repositorio por su tamaño. Descarga `mando-ultima-prueba.pt` desde la sección [Releases](../../releases) de este repositorio.
+Los ficheros `.pt` no se incluyen en el repositorio por su tamaño. Para usar el detector, entrena el modelo con el dataset incluido:
 
 **Entrenamiento desde cero:**
 ```bash
@@ -181,7 +181,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**Modelos pre-entrenados:** YOLOv8n y los modelos de MediaPipe se descargan automáticamente en la primera ejecución. El modelo custom `mando-ultima-prueba.pt` debe descargarse desde [Releases](../../releases) y colocarse en `DL/`.
+**Modelos pre-entrenados:** YOLOv8n y los modelos de MediaPipe se descargan automáticamente en la primera ejecución. El modelo custom de `DL/` debe entrenarse con el dataset incluido (ver sección [Entrenamiento YOLO personalizado](#entrenamiento-yolo-personalizado)).
 
 ---
 

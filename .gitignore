@@ -6,6 +6,16 @@
 token.env
 *.pdf
 
+# Imágenes con posibles datos personales (DNI, carnets)
+opcionales/sustitucion-foto-carnet/carnet-v1.png
+opcionales/sustitucion-foto-carnet/carnet-v2.png
+opcionales/sustitucion-foto-carnet/carnet-bus.jpeg
+opcionales/sustitucion-foto-carnet/foto-ejemplo.jpg
+
+# Dataset de entrenamiento YOLO — imágenes excluidas por privacidad
+DL/train/images/
+DL/val/images/
+
 # ──────────────────────────────────────────
 # PYTHON — artefactos generados
 # ──────────────────────────────────────────

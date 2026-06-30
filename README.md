@@ -112,8 +112,10 @@ Entrenamiento de un detector de objetos custom (mando a distancia) con YOLOv8/11
 - Configuración en [`DL/mando.yaml`](DL/mando.yaml).
 - Script de inferencia mínimo en [`DL/yolo_run.py`](DL/yolo_run.py).
 
+**Dataset:** 200 imágenes de entrenamiento y 34 de validación capturadas manualmente, anotadas en formato YOLO. Las imágenes no se incluyen en el repositorio por contener entornos privados; sí se incluyen las etiquetas y la configuración del dataset.
+
 **Pesos del modelo entrenado:**
-Los ficheros `.pt` no se incluyen en el repositorio por su tamaño. Para usar el detector, entrena el modelo con el dataset incluido:
+Los ficheros `.pt` no se incluyen en el repositorio por su tamaño. Para usar el detector, entrena el modelo con tu propio dataset:
 
 **Entrenamiento desde cero:**
 ```bash

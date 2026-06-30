@@ -86,7 +86,7 @@ Herramienta interactiva para calibración intrínseca de cámara y medición 3D 
 **Archivos de calibración incluidos:**
 - [`calibracion/calib.txt`](calibracion/calib.txt) — parámetros K, D de la cámara usada.
 - [`calibracion/calibrate/pattern.png`](calibracion/calibrate/pattern.png) — patrón de tablero de ajedrez.
-- [`calibracion/calibrate/capturas-stream/`](calibracion/calibrate/capturas-stream/) — 16 capturas de calibración.
+- [`calibracion/calibrate/capturas-stream/`](calibracion/calibrate/capturas-stream/) — 8 capturas de calibración.
 
 ---
 

@@ -18,6 +18,7 @@
 | [Clasificador modular](#clasificador-modular) | Reconocimiento de objetos por múltiples métodos | SIFT, embeddings, Procrustes |
 | [Calibración de cámara](#calibración-de-cámara) | Medición 3D y corrección de distorsión | Matriz intrínseca, FOV, undistort |
 | [Rectificación perspectiva](#rectificación-de-perspectiva) | Medición de distancias reales en imagen | Homografía, transformación métrica |
+| [Análisis de tráfico](#análisis-de-tráfico) | Conteo de vehículos por sentido y gráficas de flujo | MOG2, morfología, componentes conexas, tracking |
 | [Entrenamiento YOLO](#entrenamiento-yolo-personalizado) | Detector de objetos custom entrenado desde cero | YOLOv8/11, dataset propio |
 | [AR con marcadores](#ar-con-marcadores-hexagonales) | Realidad aumentada sobre marcadores hexagonales | solvePnP, Rodrigues, pose estimation |
 | [Sustitución en carnet](#sustitución-de-foto-en-carnet) | Reemplaza la foto de un carnet en tiempo real | ORB, RANSAC, alpha blending |
@@ -101,6 +102,27 @@ Estima distancias reales entre objetos usando homografía desde puntos de refere
 - Calcula el **margen de error** perturbando las coordenadas de referencia.
 
 ---
+
+## Análisis de tráfico
+
+**Archivos:** [`trafico/`](trafico/)
+
+Cuenta los vehículos que cruzan una línea central en un vídeo de carretera, los separa por sentido de movimiento (izquierda / derecha) y genera gráficas del flujo a lo largo del tiempo. Probado con un stream público de una carretera.
+
+**Características:**
+- **Sustracción de fondo MOG2** con detección de sombras, binarizada para quedarse solo con los píxeles en movimiento.
+- **ROI dibujado con el ratón** para analizar solo la zona de la carretera.
+- **Filtrado morfológico en dos pasos:** una apertura con kernel vertical (7×2) para eliminar ruido fino, y un cierre de tamaño ajustable para unir los fragmentos de un mismo vehículo en una sola masa.
+- **Componentes conexas** con filtro por área mínima para descartar detecciones pequeñas.
+- **Seguimiento por distancia entre centroides:** cada detección se asocia al objeto libre más cercano dentro de una distancia máxima, y los objetos que desaparecen un instante se mantienen 15 frames antes de descartarse.
+- **Conteo por cruce de línea:** cada vehículo se cuenta una sola vez, en el sentido en que cruza la línea central.
+- **Sliders integrados en la ventana** para ajustar en tiempo real el área mínima, el tamaño del cierre morfológico y la distancia máxima de asociación.
+- **Gráficas de flujo:** una gráfica en vivo que se actualiza por bloques de 100 frames y, al terminar, una figura final con los vehículos por bloque y sentido, y el flujo total frente a su media, guardada como `grafica_trafico.png`.
+
+---
+
+
+
 
 ## Entrenamiento YOLO personalizado
 

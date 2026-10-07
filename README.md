@@ -171,7 +171,7 @@ Reemplaza en tiempo real la fotografía de un carnet detectado en vídeo.
 ## Instalación
 
 ```bash
-git clone https://github.com/tu-usuario/Vision-Artificial.git
+git clone https://github.com/ivaang04/Vision-Artificial.git
 cd Vision-Artificial
 
 python -m venv venv
